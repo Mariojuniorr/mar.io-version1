@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@700&family=IBM+Plex+Sans+Thai+Looped:wght@300&family=IBM+Plex+Sans:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #874634;
+}
+
+/* 
+=====================
+        Home
+=====================
+*/
+
+@media (max-width: 1373px) {
+    .container{
+        display: none;
+    }
+
+    .Homebackground img{
+            display: none;
+    }
+}
+
+@media (max-width: 1000px){
+    .Title-fixed{
+        display: none;
+    }
+    .Hometitle{
+        justify-content: center;
+        align-items: center;
+    }
+    .Homebackground{
+        max-height: 50vh;
+    }
+    .Homebackground img{
+        display: none;
+    }
+    .container{
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    
+    .Projects-cards{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.Title-fixed{
+    color: #000;
+    font-size: 1.8vw;
+    left: 88%;
+    top: 10%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    letter-spacing: -0.08em;
+    position: fixed;
+    display: none;
+}
+
+#brown-title {
+    color: #874634;
+}
+
+.Homebackground{
+    display: flex;
+    background-color: black;
+    min-width: 100%;
+    height: 100vh;
+}
+
+.Homebackground img{
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.Homebackground img:hover{
+    transform: scale(1.5);
+}
+
+.Home-text{
+    margin-top: 18%;
+    margin-left: 20%;
+}
+
+.Hometitle{
+    display: flex;
+    font-size: clamp(5em, 1em + 5.2vw, 10vw);
+    font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    letter-spacing: -0.04em;
+    color:white;
+}
+
+.Hometitle span{
+    color:#874634;
+}
+
+.container {
+    position: relative;
+    margin-left: 28%;
+    bottom:-350px;
+    transform: skewY(-20deg);
+    animation: animate 16s linear infinite;
+    cursor: pointer;
+}
+
+@keyframes animate {
+    0%{
+        translate: 0px;
+    }
+    50%{
+        translate: 0px 20px;
+    }
+    100%{
+        translate: 0px;
+    }
+}
+
+.container .cube {
+    position: relative;
+    z-index: 3;
+}
+
+.container .cube:nth-child(2){
+    z-index: 2;
+    translate: -60px -60px;
+}
+
+.container .cube:nth-child(3){
+    z-index: 1;
+    translate: -120px -120px;
+}
+
+.container .cube div{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    translate: calc(-70px * var(--x)) 
+            calc(-70px * var(--y));
+}
+
+.container .cube div span{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #dcdcdc;
+    z-index: calc(1 * var(--i));
+    transition: 1.5s;
+}
+
+.container .cube div span:hover{
+    transition: 0s;
+    background-color: #874634;
+    filter: drop-shadow(0 0 30px #874634);
+}
+
+.container .cube div span:hover::before{
+    transition:0s;
+    background-color: #874634;
+}
+
+.container .cube div span::before{
+    content: '';
+    position: absolute;
+    left: -39px;
+    width: 40px;
+    height: 100%;
+    background: #fff;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 1.5s;
+}
+
+.container .cube div span::after{
+    content: '';
+    position: absolute;
+    top:-39px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #f2f2f2;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 1.5s;
+}
+
+.container .cube div span:hover::after{
+    transition:0s;
+    background-color: #874634;
+}
+
+/* 
+========================
+        SOBRE MIM 
+========================
+*/
+.Aboutme-background{
+    background-color: white;
+    width: 100%;
+    height: 700px;
+}
+
+
+
+#About-Text{
+    padding-left: 15px;
+}
+
+
+.Aboutme-background h1{
+    font-size: 1.5em;
+    padding-top: 45px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.Aboutme-background h2{
+    font-size: 1em;
+    font-family: 'IBM Plex Sans', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.Aboutme-background p{
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    padding-top: 10px;
+    width: 88%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1em;
+}
+
+/* 
+==========================
+        PROJETOS
+==========================
+*/
+.Projects-background{
+    background-color: #E38B29;
+    width: 100%;
+    min-height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Projects-background h1{
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.Projects-cards{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+.Projects-cards .cards{
+    position: relative;
+    width: 300px;
+    height: 600px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 35px;
+    background-color: rgba(0,0,0,0.93);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid rgba(255,255,255,0.1);
+    border-left: 2px solid rgba(255,255,255,0.1);
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    transform: translateY(0);
+    transition: 0.6s ease-in-out;
+}
+
+.Projects-cards .cards:hover{
+    transform: translateY(-40px);
+    background-color: #dcdcdc;
+    color: #000;
+}
+
+.Projects-cards .cards .content{
+    padding: 20px;
+    text-align: center;
+}
+
+.Projects-cards .cards .content h2{
+    position: absolute;
+    top: -35px;
+    right: 200px;
+    font-size: 8em;
+    color: rgba(255,255,255,0.1);
+    pointer-events: none;
+}
+
+.Projects-cards .cards:hover .content h2{
+    color:rgba(0, 0, 0, 0.2)
+}
+
+
+.Projects-cards .cards .content h3{
+    font-size: 1.8em;
+    z-index: 1;
+}
+
+.Projects-cards .cards .content p{
+    font-size: 1em;
+    color: #888;
+    font-weight: 900;
+    font-family: 'IBM Plex Sans Lopped', sans-serif;;
+}
+
+.Projects-cards .cards:hover .content p{
+    color: #000;
+    font-weight: 900;
+    font-family: 'IBM Plex Sans Looped', sans-serif;
+}
+
+.Projects-cards .cards .content a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background-color: #dcdcdc;
+    text-decoration: none;
+    color: #000;
+    border-radius: 5px;
+}
+
+/*
+=======================
+        SKILLS
+=======================
+*/
+.Skills-background{
+    background-color: black;
+    width: 100%;
+    height: 1500px;
+    color:white;
+    font-family: 'IBM Plex Sans Looped', sans-serif;
+    font-weight: -5000px;
+}
+
+.Skills-background h1{
+    padding: 50px;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.Skills-titles{
+    position: relative;
+    width: 1000px;
+    padding: 40px 0;
+    margin: 40px auto;
+}
+
+.Skills-titles ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.Skills-titles ul li{
+    line-height: normal;
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.Skills-titles::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    top: 70px;
+    height: 1300%;
+    background-color: #888;
+}
+
+.Skills-titles ul li:nth-child(odd){
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.Skills-titles ul li:nth-child(even){
+    float: right;
+    text-align: left;
+    clear: both;
+}
+
+.Skills-titles ul li:nth-child(odd)::before{
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: -6px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(135, 70, 52, 1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(135, 70, 52, 0.5);
+}
+
+.Skills-titles ul li:nth-child(even)::before{
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(135, 70, 52, 1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(135, 70, 52, 0.5);
+}
+
+.Skills-titles ul li:nth-child(odd) .Skills-line{
+    position: absolute;
+    top: 12px;
+    right: -165px;
+    margin: 0;
+    padding: 8px 16px;
+    background-color: #874634;
+    box-shadow: 0 0 0 3px rgba(135, 70, 52, 0.5);
+    border-radius: 5px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.Skills-titles ul li:nth-child(even) .Skills-line{
+    position: absolute;
+    top: 12px;
+    left: -165px;
+    margin: 0;
+    padding: 8px 16px;
+    background-color: #874634;
+    box-shadow: 0 0 0 3px rgba(135, 70, 52, 0.5);
+    border-radius: 5px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+.Skills-content{
+    padding-bottom: 10px;
+}
+
+.Skills-content h3{
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+@media (max-width: 1000px) {
+    .Skills-titles{
+        width: 90%;
+    }
+}
+
+@media(max-width: 770px){
+
+    /*ARRUMAR ISSO*/
+    .Skills-background{
+        background-color: black;
+        width: 100%;
+        height: 1700px;
+        color:white;
+        font-family: 'IBM Plex Sans Looped', sans-serif;
+        font-weight: -5000px;
+    }
+
+    .Skills-titles{
+        margin-left: 10px;
+    }
+
+
+    .Skills-titles ul li{
+        line-height: normal;
+        position: relative;
+        width: 80%;
+        padding: 20px 40px;
+        box-sizing: border-box;
+    }
+
+    .Skills-titles::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 2px;
+        height: 1450%;
+        background-color: #888;
+    }
+
+    .Skills-titles li:nth-child(odd)::before, 
+    .Skills-titles li:nth-child(even)::before{
+        text-align: left;
+        left: -4px;
+    }
+
+    .Skills-titles ul li:nth-child(odd),
+    .Skills-titles ul li:nth-child(even){
+        float: left;
+        text-align: left;
+    }
+
+    .Skills-titles ul li:nth-child(odd) .Skills-line,
+    .Skills-titles ul li:nth-child(even) .Skills-line{
+        position: absolute;
+        top: 12px;
+        right: -85px;
+        left: auto;
+        margin: 0;
+        padding: 7px 9px;
+        background-color: #874634;
+        box-shadow: 0 0 0 3px rgba(135, 70, 52, 0.5);
+        border-radius: 5px;
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+}
+
+
+/*
+=======================
+     CONTACT ME
+=======================
+*/
+
+.Contactme-background{
+    display: flex;
+    background-color: #dcdcdc;
+    width: 100%;
+    height: 10vh;
+}
+
+.Contactme{
+    text-align: center;
+    justify-content: center;
+    margin-left: 40.5%;
+    font-family: 'IBM Plex Sans', sans-serif;
+
+}
+
+.Contactme-background img{
+    cursor: pointer;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    transform: translate(-250px, 30px);
+    padding: 5px;
+}
+
+/*
+=======================
+        FOOTER
+=======================
+*/
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    color: #000;
+    background-color: #874634;
+    padding-top: 15px;
+    font-size: 10px;
+    text-align: center;
+    justify-content: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
