@@ -220,28 +220,32 @@
     background-color: white;
     width: 100%;
     height: 700px;
+    padding-top: 3%;
+    padding-bottom: 3%;    
 }
 
-
-
-#About-Text{
-    padding-left: 15px;
+.Aboutme-Img-back{
+    background-color: #000;
+    width: 53.5vw;
+    height: 71.4vh;
+    display: inline;
+    position: absolute;
+    translate: 850px -55px;
 }
-
 
 .Aboutme-background h1{
     font-size: 1.5em;
     padding-top: 45px;
     font-family: 'IBM Plex Sans', sans-serif;
-    justify-content: center;
+    margin-left: 10%;
     align-items: center;
     display: flex;
 }
 
 .Aboutme-background h2{
     font-size: 1em;
+    margin-left: 10%;
     font-family: 'IBM Plex Sans', sans-serif;
-    justify-content: center;
     align-items: center;
     display: flex;
 }
@@ -249,11 +253,119 @@
 .Aboutme-background p{
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;
     padding-top: 10px;
-    width: 88%;
+    margin-left: 10%;
+    margin-right: 60%;
     justify-content: center;
     align-items: center;
     display: flex;
     font-size: 1em;
+}
+
+
+.Aboutmecontainer {
+    position: absolute;
+    margin-left: 0%;
+    bottom:0px;
+    transform: skewY(-20deg);
+    animation: animate 16s linear infinite;
+    cursor: pointer;
+}
+
+@keyframes animate {
+    0%{
+        translate: 0px;
+    }
+    50%{
+        translate: 0px 20px;
+    }
+    100%{
+        translate: 0px;
+    }
+}
+
+.Aboutme-container .Aboutme-cube {
+    position: relative;
+    z-index: 3;
+}
+
+.Aboutme-container .Aboutme-cube:nth-child(2){
+    z-index: 2;
+    translate: -60px -60px;
+}
+
+.Aboutme-container .Aboutme-cube:nth-child(3){
+    z-index: 1;
+    translate: -120px -120px;
+}
+
+.Aboutme-container .Aboutme-cube div{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    translate: calc(-70px * var(--x)) 
+            calc(-70px * var(--y));
+}
+
+.Aboutme-container .Aboutme-cube div span{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #dcdcdc;
+    z-index: calc(1 * var(--i));
+    transition: 1.5s;
+}
+
+.Aboutme-container .Aboutme-cube div span:hover{
+    transition: 0s;
+    background-color: #874634;
+    filter: drop-shadow(0 0 30px #874634);
+}
+
+.Aboutme-container .Aboutme-cube div span:hover::before{
+    transition:0s;
+    background-color: #874634;
+}
+
+.Aboutme-container .Aboutme-cube div span::before{
+    content: '';
+    position: absolute;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    background: #fff;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 1.5s;
+}
+
+.Aboutme-container .Aboutme-cube div span::after{
+    content: '';
+    position: absolute;
+    top: -19px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #f2f2f2;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 1.5s;
+}
+
+.Aboutme-container .Aboutme-cube div span:hover::after{
+    transition:0s;
+    background-color: #874634;
+}
+
+@media(max-width: 1300px){
+    .Aboutme-background{
+        height: auto;
+    }
+
+    .Aboutme-background p{
+        margin-right: 5%;
+    }
 }
 
 /* 
