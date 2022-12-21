@@ -220,44 +220,51 @@
     background-color: white;
     width: 100%;
     height: 700px;
-    padding-top: 3%;
     padding-bottom: 3%;    
 }
 
-.Aboutme-Img-back{
-    background-color: #000;
-    width: 53.5vw;
-    height: 71.4vh;
-    display: inline;
+.Aboutme-Img-Background{
     position: absolute;
-    translate: 850px -55px;
+    max-width: 60%;
+    height: 71.5%;
+    left: 45%;
+    background-color: #000;
+}
+
+.Aboutme-Img-Background img{
+    position: relative;
+    display: block;
+    max-width: 30%;
+    top: 20%;
+    left: 37%;
 }
 
 .Aboutme-background h1{
     font-size: 1.5em;
-    padding-top: 45px;
     font-family: 'IBM Plex Sans', sans-serif;
-    margin-left: 10%;
     align-items: center;
     display: flex;
+    translate: 50px 50px;
+    position: absolute;
 }
 
 .Aboutme-background h2{
     font-size: 1em;
-    margin-left: 10%;
     font-family: 'IBM Plex Sans', sans-serif;
     align-items: center;
     display: flex;
+    translate: 50px 80px;
+    position: absolute;
 }
 
 .Aboutme-background p{
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;
     padding-top: 10px;
-    margin-left: 10%;
-    margin-right: 60%;
-    justify-content: center;
-    align-items: center;
+    margin-right: 70%;
     display: flex;
+    position: relative;
+    text-align: justify;
+    translate: 50px 90px;
     font-size: 1em;
 }
 
@@ -358,13 +365,28 @@
     background-color: #874634;
 }
 
-@media(max-width: 1300px){
+@media (max-width: 1024px) {
+    .Aboutme-Img-Background{
+        display: none;
+    }
+
     .Aboutme-background{
-        height: auto;
+        max-height: 110vh;
+        justify-content: center;
+        text-align: center;
     }
 
     .Aboutme-background p{
-        margin-right: 5%;
+        translate: 20px 90px;
+        margin-right: 15%;
+    }
+
+    .Aboutme-background h1{
+        translate: 20px 50px;
+    }
+
+    .Aboutme-background h2{
+        translate: 20px 80px;
     }
 }
 
